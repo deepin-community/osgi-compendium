@@ -1,0 +1,19 @@
+#!/usr/bin/make -f
+
+include /usr/share/dpkg/pkg-info.mk
+
+export JAVA_HOME	:= /usr/lib/jvm/default-java
+export CLASSPATH	:= /usr/share/java/osgi.core.jar:/usr/share/java/servlet-api-3.1.jar:/usr/share/java/ee.foundation.jar:/usr/share/java/geronimo-jpa_2.0_spec.jar:/usr/share/java/osgi.annotation.jar:/usr/share/java/jaxrs-api.jar
+
+MAVEN_REPO		:= https://repo1.maven.org/maven2/org/osgi/osgi.cmpn
+JAR_NAME		:= osgi.cmpn
+PACKAGE			:= libosgi-compendium-java
+
+%:
+	dh $@ --with javahelper --with maven_repo_helper
+
+override_jh_build:
+	jh_build --javacopts='--release 8' --javadoc-opts='--release 8'
+
+get-orig-pom:
+	wget --user-agent="" -O debian/pom.xml $(MAVEN_REPO)/$(DEB_VERSION_UPSTREAM)/osgi.cmpn-$(DEB_VERSION_UPSTREAM).pom

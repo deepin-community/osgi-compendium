@@ -1,0 +1,1 @@
+debian/pom.xml --no-parent --artifact=osgi.cmpn.jar --relocate=org.osgi:org.osgi.compendium:debian 

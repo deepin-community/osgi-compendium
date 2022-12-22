@@ -1,0 +1,111 @@
+osgi-compendium (7.0.0-1) unstable; urgency=medium
+
+  * Team upload.
+  * New upstream release
+    - Updated the Maven pom
+    - New dependency on libosgi-annotation-java (>= 7.0.0)
+    - New dependency on libjaxrs-api-java
+    - Build depend on Java 8 or higher
+    - Turned the new interface methods into default methods
+      to preserve the backward compatibility
+  * Standards-Version updated to 4.5.0
+  * Use salsa.debian.org Vcs-* URLs
+  * Switch to debhelper level 13
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Mon, 03 Aug 2020 09:51:00 +0200
+
+osgi-compendium (6.0.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream release
+    * Track new source location
+    * Update package descriptions
+    * Rename JAR: osgi.compendium.jar => osgi.cmpn.jar
+    * Remove all patches
+  * d/control:
+    * Fix typo (additionnal)
+    * Remove Damien Raude-Morvan from Uploaders (Closes: #889329)
+  * d/rules: Use pkg-info.mk instead of dpkg-parsechangelog
+  * Build-Depends on headless JDK
+  * d/copyright: Use secure URLs
+  * Update debhelper compat level to 11
+  * Update Standards-Version to 4.1.3
+
+ -- Kai-Chung Yan (殷啟聰) <seamlikok@gmail.com>  Sat, 10 Mar 2018 14:17:46 +0800
+
+osgi-compendium (5.0.0-5) unstable; urgency=medium
+
+  * Team upload.
+  * Fix CLASSPATH to geronimo-jpa_2.0_spec.jar (javax.persistence).
+    Thanks to Daniel Schepler for the report. (Closes: #828825)
+
+ -- Markus Koschany <apo@debian.org>  Sat, 16 Jul 2016 17:51:01 +0200
+
+osgi-compendium (5.0.0-4) unstable; urgency=medium
+
+  * Team upload.
+  * Removed the Servlet API, the JPA spec and the J2ME API from the dependencies
+    of the binary package (provided dependencies).
+  * Standards-Version updated to 3.9.8 (no changes)
+  * Use secure Vcs-* URLs
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Wed, 27 Apr 2016 23:26:51 +0200
+
+osgi-compendium (5.0.0-3) unstable; urgency=medium
+
+  * Team upload.
+  * Added new types from OSGi Compendium 6 required by BND 2.4.0
+  * Transition to the Servlet API 3.1
+
+ -- Emmanuel Bourg <ebourg@apache.org>  Thu, 17 Dec 2015 11:10:07 +0100
+
+osgi-compendium (5.0.0-2) unstable; urgency=medium
+
+  * Team upload.
+  * Upload to unstable.
+
+ -- Miguel Landaeta <nomadium@debian.org>  Fri, 01 May 2015 14:12:30 -0300
+
+osgi-compendium (5.0.0-1) experimental; urgency=medium
+
+  * Team upload.
+
+  [ Emmanuel Bourg ]
+  * Switch to debhelper level 9.
+  * Use canonical URLs for the Vcs-* fields.
+  * Removed the duplicate Copyright field in debian/copyright.
+  * Use XZ compression for the upstream tarball.
+
+  [ Markus Koschany ]
+  * Imported Upstream version 5.0.0.
+  * Drop orig-tar.sh and rewrite get-orig-source target. Fetch the latest source
+    versions from Maven.
+  * Update watch file and fetch the sources from Maven Central due to lack of
+    official download opportunities.
+  * Update javabuild. Use org directory for building the jar file.
+  * Declare compliance with Debian Policy 3.9.6.
+  * wrap-and-sort -sa.
+  * Use shorter Vcs-Browser URL.
+  * Update debian/copyright for new release and copyright format 1.0.
+  * Update debian/pom.xml for version 5.0.0.
+  * Delete override for jh_manifest. It is obsolete.
+
+  [ Miguel Landaeta ]
+  * Add versioned constraint to dependencies on libosgi-core-java.
+  * Update package description.
+
+ -- Markus Koschany <apo@gambaru.de>  Tue, 17 Feb 2015 23:32:37 +0100
+
+osgi-compendium (4.3.0-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add Build-Depends on libgeronimo-jpa-2.0-spec-java.
+  * d/watch: Use new bndtools project on github.
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Wed, 09 Nov 2011 20:42:22 +0100
+
+osgi-compendium (4.2.0-1) unstable; urgency=low
+
+  * Initial release. (Closes: #643979).
+
+ -- Damien Raude-Morvan <drazzib@debian.org>  Sun, 02 Oct 2011 19:40:47 +0200

@@ -1,0 +1,4 @@
+version=4
+opts="repack,compression=xz,uversionmangle=s/-(alpha|beta)-/~$1/" \
+https://repo1.maven.org/maven2/org/osgi/osgi.cmpn/(\d.*)/\
+ osgi.cmpn-(\d.*)-sources.jar

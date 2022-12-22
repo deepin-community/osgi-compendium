@@ -1,0 +1,95 @@
+Description: Preserves the source compatibility with older versions of the API
+Author: Emmanuel Bourg <ebourg@apache.org>
+Forwarded: not-needed
+--- a/org/osgi/service/log/LoggerFactory.java
++++ b/org/osgi/service/log/LoggerFactory.java
+@@ -60,7 +60,7 @@
+ 	 *         parameter is equal to {@link Logger#ROOT_LOGGER_NAME}, then the
+ 	 *         root logger is returned.
+ 	 */
+-	Logger getLogger(String name);
++	default Logger getLogger(String name) { throw new UnsupportedOperationException(); }
+ 
+ 	/**
+ 	 * Return the {@link Logger} named with the specified class.
+@@ -68,7 +68,7 @@
+ 	 * @param clazz The class to use for the logger name.
+ 	 * @return The {@link Logger} named with the name of the specified class.
+ 	 */
+-	Logger getLogger(Class< ? > clazz);
++	default Logger getLogger(Class< ? > clazz) { throw new UnsupportedOperationException(); }
+ 
+ 	/**
+ 	 * Return the {@link Logger} of the specified type named with the specified
+@@ -85,7 +85,7 @@
+ 	 * @throws IllegalArgumentException If the specified type is not a supported
+ 	 *             Logger type.
+ 	 */
+-	<L extends Logger> L getLogger(String name, Class<L> loggerType);
++	default <L extends Logger> L getLogger(String name, Class<L> loggerType) { throw new UnsupportedOperationException(); }
+ 
+ 	/**
+ 	 * Return the {@link Logger} of the specified type named with the specified
+@@ -100,7 +100,7 @@
+ 	 * @throws IllegalArgumentException If the specified type is not a supported
+ 	 *             Logger type.
+ 	 */
+-	<L extends Logger> L getLogger(Class< ? > clazz, Class<L> loggerType);
++	default <L extends Logger> L getLogger(Class< ? > clazz, Class<L> loggerType) { throw new UnsupportedOperationException(); }
+ 
+ 	/**
+ 	 * Return the {@link Logger} of the specified type named with the specified
+@@ -124,6 +124,6 @@
+ 	 * @throws IllegalArgumentException If the specified type is not a supported
+ 	 *             Logger type or the specified Bundle is not a resolved bundle.
+ 	 */
+-	<L extends Logger> L getLogger(Bundle bundle, String name,
+-			Class<L> loggerType);
++	default <L extends Logger> L getLogger(Bundle bundle, String name,
++			Class<L> loggerType) { throw new UnsupportedOperationException(); }
+ }
+--- a/org/osgi/service/log/LogEntry.java
++++ b/org/osgi/service/log/LogEntry.java
+@@ -111,7 +111,7 @@
+ 	 * @return The level of this {@code LogEntry} object.
+ 	 * @since 1.4
+ 	 */
+-	LogLevel getLogLevel();
++	default LogLevel getLogLevel() { throw new UnsupportedOperationException(); }
+ 
+ 	/**
+ 	 * Returns the name of the {@link Logger} object used to create this
+@@ -121,7 +121,7 @@
+ 	 *         {@code LogEntry} object.
+ 	 * @since 1.4
+ 	 */
+-	String getLoggerName();
++	default String getLoggerName() { throw new UnsupportedOperationException(); }
+ 
+ 	/**
+ 	 * Returns the sequence number for this {@code LogEntry} object.
+@@ -133,7 +133,7 @@
+ 	 * @return The sequence number for this {@code LogEntry} object.
+ 	 * @since 1.4
+ 	 */
+-	long getSequence();
++	default long getSequence() { throw new UnsupportedOperationException(); }
+ 
+ 	/**
+ 	 * Returns a string representing the thread which created this
+@@ -146,7 +146,7 @@
+ 	 *         {@code LogEntry} object.
+ 	 * @since 1.4
+ 	 */
+-	String getThreadInfo();
++	default String getThreadInfo() { throw new UnsupportedOperationException(); }
+ 
+ 	/**
+ 	 * Returns the location information of the creation of this {@code LogEntry}
+@@ -156,5 +156,5 @@
+ 	 *         object.
+ 	 * @since 1.4
+ 	 */
+-	StackTraceElement getLocation();
++	default StackTraceElement getLocation() { throw new UnsupportedOperationException(); }
+ }

@@ -1,0 +1,2 @@
+# For migrating from 5 to 6
+usr/share/java/osgi.cmpn.jar   usr/share/java/osgi.compendium.jar

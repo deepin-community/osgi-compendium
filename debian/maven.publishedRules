@@ -1,0 +1,3 @@
+# OSGi has been copied by several project, and each re-publish the OSGi jar under their own namespace, so we try to fix it here
+s/org.apache.felix/org.osgi/ org.osgi.compendium * * * *
+# OSGi compendium provided in Eclipse Equinox has got more classes and a few fixes in FrameworkUtils at the moment

@@ -1,0 +1,18 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0
+Upstream-Name: OSGi Compendium Classes
+Upstream-Contact: OSGi Alliance (http://www.osgi.org/)
+Source: https://repo1.maven.org/maven2/org/osgi/osgi.cmpn
+
+Files: *
+Copyright: 2012-2013, OSGi Alliance
+License: Apache-2.0
+
+Files: debian/*
+Copyright: 2010, Ludovic Claude <ludovic.claude@laposte.net>
+           2011, Damien Raude-Morvan <drazzib@debian.org>
+           2015, Markus Koschany <apo@gambaru.de>
+License: Apache-2.0
+
+License: Apache-2.0
+ On Debian systems, the complete text of the Apache License Version 2.0,
+ can be found in /usr/share/common-licenses/Apache-2.0.
